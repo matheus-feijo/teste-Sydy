@@ -3,6 +3,12 @@
     background-color: #595959;
 }
 
+.loading{
+    position: absolute;
+    left: 50%;
+    top:50%;
+}
+
 .container-home header{
     color:#F2F2F2;
     display: flex;

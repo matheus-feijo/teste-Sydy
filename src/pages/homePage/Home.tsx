@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { CoinDetails } from "./components/CoinDetails";
 import { Graph } from "./components/Graph";
@@ -80,23 +80,23 @@ export function Home() {
     return (
         <div className="container-home">
 
-            <header>
-                <h1>{infoCoin?.chartName}</h1>
-            </header>
+            {infoCoin === undefined ? <p className="loading">Carregando dados...</p> :
+                <Fragment>
+                    <header>
+                        <h1>{infoCoin?.chartName}</h1>
+                    </header>
 
-            <div className="coins">
-                <CoinDetails title='Dolar' coin={infoCoin?.bpi.USD} />
-                <CoinDetails title='Libra Esterlina' coin={infoCoin?.bpi.GBP} />
-                <CoinDetails title='Euro' coin={infoCoin?.bpi.EUR} />
+                    <div className="coins">
+                        <CoinDetails title='Dolar' coin={infoCoin?.bpi.USD} />
+                        <CoinDetails title='Libra Esterlina' coin={infoCoin?.bpi.GBP} />
+                        <CoinDetails title='Euro' coin={infoCoin?.bpi.EUR} />
 
-                <div className="container-graph">
-
-                    {labelsGraph?.length !== 0 ? <Graph dataGraph={dataGraph} labelsGraph={labelsGraph} /> : <p>Carregando graifco...</p>}
-
-
-                </div>
-
-            </div>
+                        <div className="container-graph">
+                            {labelsGraph?.length !== 0 ? <Graph dataGraph={dataGraph} labelsGraph={labelsGraph} /> : <p>Carregando grafico...</p>}
+                        </div>
+                    </div>
+                </Fragment>
+            }
 
 
         </div>
