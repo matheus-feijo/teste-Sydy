@@ -1,0 +1,34 @@
+.container-home{
+    min-height: 100vh;
+    background-color: #595959;
+}
+
+.container-home header{
+    color:#F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    font-size: 28px; 
+}
+
+
+.container-home p{
+    font: bold 32px "Roboto";
+    color: #F2F2F2;
+}
+
+.container-home .coins{
+    padding-left: 5vh;
+    display: grid;
+    gap: 15px;
+}
+
+.container-home .container-graph{
+    display: flex;
+    justify-content: center;
+    max-width: 100vh;
+    width: 80%;
+}
+
+
